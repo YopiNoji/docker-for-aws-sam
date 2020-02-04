@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: Photoruction_AWS_Lambda
+    container_name: AWS
     tty: true
     volumes:
       - .:/usr/src
