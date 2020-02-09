@@ -28,6 +28,12 @@ Run:
 $ docker exec -it 4fd9b7f55e1b bash
 ```
 
+Or Run:
+
+```bash
+$ docker-compose exec app bash
+```
+
 Now, you are in Docker container.
 
 ```
