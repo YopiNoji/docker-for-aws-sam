@@ -1,64 +1,92 @@
 # How to use
 
-## Docker run
+## Docker
+
+### Docker run
 
 Run:
 
 ```bash
-$ docker-compose up -d --build
+docker-compose up -d --build
 ```
 
-## Confirm Docker running
+To confirm Docker is running.
 
 Run:
 
 ```bash
-$ docker ps
-CONTAINER ID        IMAGE                         COMMAND                  CREATED             STATUS              PORTS                              NAMES
-4fd9b7f55e1b        aws_app   "/bin/sh"                15 minutes ago      Up 15 minutes                                          aws_app
+docker ps
 ```
 
-Please, remember `CONTAINER ID`.
-
-## access Docker container
+### access Docker container
 
 Run:
 
-```bash
-$ docker exec -it 4fd9b7f55e1b bash
 ```
-
-Or Run:
-
-```bash
-$ docker-compose exec app bash
+docker-compose exec app bash
 ```
 
 Now, you are in Docker container.
 
-```
-root@4fd9b7f55e1b:/usr/src# 
-```
+## AWS-CLI
 
-## Use aws-cli
+In Docker container.
+
+### Init AWS-CLI
 
 Run:
 
 ```
-root@4fd9b7f55e1b:/usr/src# aws configure
+aws configure
 ```
 
 Sample:
 
 ```
-AWS Access Key ID [None]: *************ID
-AWS Secret Access Key [None]: ******************************KEY
+AWS Access Key ID [None]: **********ID
+AWS Secret Access Key [None]: ***************Key
 Default region name [None]: ap-northeast-1
 Default output format [None]: json
 ```
 
-This is test command below.
+### Test your configure
+
+This is test command:
 
 ```
-root@4fd9b7f55e1b:/usr/src# aws s3 ls
+aws lambda list-functions
+```
+
+
+## AWS SAM
+
+https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-command-reference.html
+
+### How to create new porject
+
+```
+sam init your-project-name
+cd your-project-name
+```
+
+### Build App
+
+Run:
+
+```
+sam build
+```
+
+### Validate Your App
+
+Run:
+
+```
+sam validate
+```
+
+### Deploy to AWS
+
+```
+sam deploy --guided
 ```
