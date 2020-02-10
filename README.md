@@ -2,6 +2,10 @@
 
 ## Docker
 
+If you do not install Docker in your PC, install Docker firstly.
+
+https://www.docker.com/get-started
+
 ### Docker run
 
 Run:
@@ -31,6 +35,7 @@ Now, you are in Docker container.
 ## AWS-CLI
 
 In Docker container.
+Configure your setting.
 
 ### Init AWS-CLI
 
